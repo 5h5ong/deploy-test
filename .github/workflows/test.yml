@@ -8,12 +8,13 @@ jobs:
     runs-on: ubuntu-latest
 
     strategy:
+      # 여러 개의 노드 버전으로 각각 다른 job들을 만들어냄
       matrix:
         node-version: [15.x, 16.x]
 
     steps:
       - uses: actions/checkout@v3
-      - name: Next.js ${{ matrix.node-version }}
+      - name: Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
