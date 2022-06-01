@@ -7,6 +7,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    environment:
+      name: deploy-secrets
+
     strategy:
       # 여러 개의 노드 버전으로 각각 다른 job들을 만들어냄
       matrix:
