@@ -37,9 +37,9 @@ jobs:
       - name: Compress the files
         run: zip -qq -r ./$GITHUB_SHA.zip .
 
-      - run: echo $AWS_REGION
+      - run: echo $GITHUB_REPOSITORY
 
       - name: Upload to S3
-        run: aws s3 cp --region $AWS_REGION ./$GITHUB_SHA.zip s3://only-deploy-test-bucket/$GITHUB_ACTION_REPOSITORY/$GITHUB_SHA.zip
+        run: aws s3 cp --region $AWS_REGION ./$GITHUB_SHA.zip s3://only-deploy-test-bucket/$GITHUB_REPOSITORY/$GITHUB_SHA.zip
 
       # - name: Create new Deployment
