@@ -43,4 +43,4 @@ jobs:
         run: aws s3 cp --region $AWS_REGION ./$GITHUB_SHA.zip s3://only-deploy-test-bucket/$GITHUB_REPOSITORY/$GITHUB_SHA.zip
 
       - name: Create new Deployment
-        run: aws deploy create-deployment --application-name deploy-test --deployment-config-name CodeDeployDefault.AllAtATime --deployment-group-name deploy-group --s3-location bucket=only-deploy-test-bucket,bundleType=zip,key=$GITHUB_REPOSITORY/$GITHUB_SHA.zip
+        run: aws deploy create-deployment --application-name deploy-test --deployment-config-name CodeDeployDefault.AllAtOnce\g --deployment-group-name deploy-group --s3-location bucket=only-deploy-test-bucket,bundleType=zip,key=$GITHUB_REPOSITORY/$GITHUB_SHA.zip
