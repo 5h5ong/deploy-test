@@ -5,4 +5,4 @@ files:
     destination: /home/ec2-user/temp
 hooks:
   AfterInstall:
-    - location: /home/ec2-user/temp/scripts/build_docker.sh
+    - location: /scripts/build_docker.sh
