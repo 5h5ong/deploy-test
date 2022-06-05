@@ -1,0 +1,5 @@
+services:
+  blue:
+    image: 5h5ong/docker-test:nextjs-test
+    ports: 
+      - 3000:3000
