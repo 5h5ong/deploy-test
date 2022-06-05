@@ -11,7 +11,7 @@ const Home: NextPage = () => {
         <div className={styles.large}>hello!</div>
         <div className={styles.medium}>Welcome to my new projects.</div>
         <div className={styles.small}>It&apos;s just simple test.</div>
-        <div className={styles.small}>Docker! Is changed?</div>
+        <div className={styles.small}>무중단 배포 완성!</div>
         <Component />
       </div>
     </div>
