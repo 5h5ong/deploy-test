@@ -6,3 +6,5 @@ files:
 hooks:
   AfterInstall:
     - location: /scripts/build_docker.sh
+  ApplicationStart:
+    - location: /scripts/switch_docker.sh
