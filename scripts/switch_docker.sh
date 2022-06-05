@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
 
+KEYWORD=running
 WORKDIR=/home/ec2-user/temp
 cd $WORKDIR
 
 # docker-compose-blue.yml을 통해 실행된 컨테이너들의 목록
-IS_BLUE_RUNNING=$(docker-compose -p blue -f docker-compose-blue.yml ps | grep Up)
-IS_GREEN_RUNNING=$(docker-compose -p green -f docker-compose-green.yml ps | grep Up)
+IS_BLUE_RUNNING=$(docker-compose -p blue -f docker-compose-blue.yml ps | grep $KEYWORD)
+IS_GREEN_RUNNING=$(docker-compose -p green -f docker-compose-green.yml ps | grep $KEYWORD)
 
 if [ -z "$IS_BLUE_RUNNING" ]; then
   docker-compose -p blue -f docker-compose-blue.yml up -d 
